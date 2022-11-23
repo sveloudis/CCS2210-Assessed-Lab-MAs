@@ -9,17 +9,16 @@
 			let span = document.getElementById("output");
 			let password = document.getElementById("thepassword");
 			let regex = "(?=.*[@$!%#+=^?&\(\)])";
-			if(password.value.length == 0){
+			if (password.value.length == 0)
 				span.innerHTML = "Password cannot be empty";
-			}
-			else if(password.value.length < 8)
+			else if (password.value.length < 8)
 				span.innerHTML = "Password cannot be smaller than 8 characters!";
-			else if(!password.value.match(/[0-9]/))
+			else if (!password.value.match(/[0-9]/))
 				span.innerHTML = "Password must contain at least one digit";
-			else if(!password.value.match(/[a-zA-Z]/))
+			else if (!password.value.match(/[a-zA-Z]/))
 				span.innerHTML = "Password must contain at least one letter";
-            		else if(!password.value.match(regex))
-				span.innerHTML = "Password must contain one special character @ # $ % ^ & * () _ + 	";
+            		else if (!password.value.match(regex))
+				span.innerHTML = "Password must contain one special character @ $ ! % # + = ^ ? & ( )";
 			else 
 				span.innerHTML = "Password accepted";
 		}
