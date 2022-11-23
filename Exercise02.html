@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Adding a New Row</title>
+	<script>
+		function addAnotherRow(){
+			let table = document.getElementById("myTable");
+			let index = document.getElementById("newrowindex");
+			let warning = document.getElementById("msg");
+
+			
+			if(index.value == null || index.value == "")
+				warning.innerHTML = 'No location specified'
+			
+			if(index.value > table.rows.length || index.value < 0)
+				warning.innerHTML = 'Out of bounds.'
+			
+			if(index.value >= 0 && index.value < table.rows.length + 1){
+				let row = table.insertRow(index.value);
+				let cell1 = row.insertCell(0);
+				let cell2 = row.insertCell(1);
+				
+				cell1.innerHTML = `New row ${index.value} cell 1`;
+				cell2.innerHTML = `New row ${index.value} cell 2`;
+			}
+		}
+	</script>
+	</head>
+	
+	<body>
+		<table id="myTable" border="1">
+			<tr>
+				<td>Default Row 0 cell 1</td>
+				<td>Default Row 0 cell 2</td>
+			</tr>
+			<tr>
+				<td>Default Row 1 cell 1</td>
+				<td>Default Row 1 cell 2</td>
+			</tr>
+		</table>
+		<br>
+	
+		<input type="button" onclick="addAnotherRow()" value="Add Another Row"> in location
+		<input type="number" id="newrowindex" size="5"><div id="msg" style="color:red;" ></div>
+
+	</body>
+</html>
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html onmousemove="showCords()">
+<head>
+    <title>Mouse Tracker</title>
+    <script>
+        function showCords(){
+            let e = window.event
+
+            let x = document.getElementById('xcoord');
+            let y = document.getElementById('ycoord');
+
+            x.innerHTML = e.clientX;
+            y.innerHTML = e.clientY;
+
+        }
+    </script>
+
+
+</head>
+<body>
+
+<H2>Tracking the X and Y Coordinates of the Mouse as it Moves.</H2>
+
+<DIV>Mouse X Coordinate: <span id="xcoord"></span></DIV>
+<DIV>Mouse Y Coordinate: <span id="ycoord"></span></DIV>
+
+</body>
+</html>
+
